@@ -1,5 +1,5 @@
 import torch 
-assert torch.cuda.is_available, "cuda not available"
+assert torch.cuda.is_available(), "cuda not available"
 import pickle 
 
 filename = "/home/fhafner/gans/datasets/Adult/DPCGANS/dpcgans_train_2000.pkl"
