@@ -1,0 +1,1060 @@
+[[package]]
+name = "appdirs"
+version = "1.4.4"
+description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "atomicwrites"
+version = "1.4.1"
+description = "Atomic file writes."
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
+name = "attrs"
+version = "23.1.0"
+description = "Classes Without Boilerplate"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+cov = ["attrs", "coverage[toml] (>=5.3)"]
+dev = ["attrs", "pre-commit"]
+docs = ["furo", "myst-parser", "sphinx", "sphinx-notfound-page", "sphinxcontrib-towncrier", "towncrier", "zope-interface"]
+tests = ["attrs", "zope-interface"]
+tests-no-zope = ["cloudpickle", "hypothesis", "mypy (>=1.1.1)", "pympler", "pytest-mypy-plugins", "pytest-xdist", "pytest (>=4.3.0)"]
+
+[[package]]
+name = "autoflake"
+version = "1.7.8"
+description = "Removes unused imports and unused variables"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+pyflakes = ">=1.1.0,<3"
+tomli = {version = ">=2.0.1", markers = "python_version < \"3.11\""}
+
+[[package]]
+name = "black"
+version = "19.10b0"
+description = "The uncompromising code formatter."
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+appdirs = "*"
+attrs = ">=18.1.0"
+click = ">=6.5"
+pathspec = ">=0.6,<1"
+regex = "*"
+toml = ">=0.9.4"
+typed-ast = ">=1.4.0"
+
+[package.extras]
+d = ["aiohttp (>=3.3.2)", "aiohttp-cors"]
+
+[[package]]
+name = "certifi"
+version = "2023.7.22"
+description = "Python package for providing Mozilla's CA Bundle."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "charset-normalizer"
+version = "3.2.0"
+description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
+category = "main"
+optional = false
+python-versions = ">=3.7.0"
+
+[[package]]
+name = "click"
+version = "8.1.6"
+description = "Composable command line interface toolkit"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
+
+[[package]]
+name = "colorama"
+version = "0.4.6"
+description = "Cross-platform colored terminal text."
+category = "main"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
+
+[[package]]
+name = "contourpy"
+version = "1.1.0"
+description = "Python library for calculating contours of 2D quadrilateral grids"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+numpy = ">=1.16"
+
+[package.extras]
+docs = ["furo", "sphinx-copybutton"]
+bokeh = ["bokeh", "selenium"]
+mypy = ["contourpy", "docutils-stubs", "mypy (==1.2.0)", "types-pillow"]
+test = ["contourpy", "matplotlib", "pillow"]
+test-no-images = ["pytest", "pytest-cov", "wurlitzer"]
+
+[[package]]
+name = "copulas"
+version = "0.6.1"
+description = "A python library for building different types of copulas and using them for sampling."
+category = "main"
+optional = false
+python-versions = ">=3.6,<3.10"
+
+[package.dependencies]
+matplotlib = {version = ">=3.4.0,<4", markers = "python_version >= \"3.7\""}
+numpy = {version = ">=1.20.0,<2", markers = "python_version >= \"3.7\""}
+pandas = ">=1.1.3,<2"
+scipy = ">=1.5.4,<2"
+
+[package.extras]
+dev = ["pytest (>=3.4.2,<6)", "pytest-cov (>=2.6.0,<3)", "pytest-rerunfailures (>=9.0.0,<10)", "rundoc (>=0.4.3,<0.5)", "pip (>=9.0.1)", "bumpversion (>=0.5.3,<0.6)", "watchdog (>=0.8.3,<0.11)", "m2r (>=0.2.0,<0.3)", "nbsphinx (>=0.5.0,<0.7)", "Sphinx (>=1.7.1,<3)", "sphinx-rtd-theme (>=0.2.4,<0.5)", "Jinja2 (>=2,<3)", "flake8 (>=3.7.7,<4)", "isort (>=4.3.4,<5)", "flake8-debugger (>=4.0.0,<4.1)", "flake8-mock (>=0.3,<0.4)", "flake8-mutable (>=1.2.0,<1.3)", "flake8-fixme (>=1.1.1,<1.2)", "pep8-naming (>=0.12.1,<0.13)", "dlint (>=0.11.0,<0.12)", "flake8-docstrings (>=1.5.0,<2)", "pydocstyle (>=6.1.1,<6.2)", "flake8-pytest-style (>=1.5.0,<2)", "flake8-comprehensions (>=3.6.1,<3.7)", "flake8-print (>=4.0.0,<4.1)", "flake8-expression-complexity (>=0.0.9,<0.1)", "flake8-multiline-containers (>=0.0.18,<0.1)", "pandas-vet (>=0.2.2,<0.3)", "flake8-builtins (>=1.5.3,<1.6)", "flake8-eradicate (>=1.1.0,<1.2)", "flake8-quotes (>=3.3.0,<4)", "flake8-variables-names (>=0.0.4,<0.1)", "flake8-sfs (>=0.0.3,<0.1)", "flake8-absolute-import (>=1.0,<2)", "autoflake (>=1.1,<2)", "autopep8 (>=1.4.3,<1.6)", "twine (>=1.10.0,<4)", "wheel (>=0.30.0)", "coverage (>=4.5.1,<6)", "tox (>=2.9.1,<4)", "invoke", "doc8 (>=0.8.0,<0.9)", "urllib3 (>=1.20,<1.26)", "tabulate (>=0.8.3,<0.9)", "boto3 (>=1.7.47,<1.10)", "docutils (>=0.10,<0.15)", "scikit-learn (>=0.24,<2)", "jupyter (>=1.0.0,<2)"]
+test = ["pytest (>=3.4.2,<6)", "pytest-cov (>=2.6.0,<3)", "pytest-rerunfailures (>=9.0.0,<10)", "rundoc (>=0.4.3,<0.5)", "scikit-learn (>=0.24,<2)", "jupyter (>=1.0.0,<2)"]
+tutorials = ["scikit-learn (>=0.24,<2)", "jupyter (>=1.0.0,<2)"]
+
+[[package]]
+name = "coverage"
+version = "7.2.7"
+description = "Code coverage measurement for Python"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+toml = ["tomli"]
+
+[[package]]
+name = "ctgan"
+version = "0.5.1"
+description = "Conditional GAN for Tabular Data"
+category = "main"
+optional = false
+python-versions = ">=3.6,<3.10"
+
+[package.dependencies]
+numpy = {version = ">=1.20.0,<2", markers = "python_version >= \"3.7\""}
+packaging = ">=20,<22"
+pandas = ">=1.1.3,<2"
+rdt = ">=0.6.2,<0.7"
+scikit-learn = ">=0.24,<2"
+torch = ">=1.8.0,<2"
+torchvision = ">=0.9.0,<1"
+
+[package.extras]
+dev = ["pip (>=9.0.1)", "bumpversion (>=0.5.3,<0.6)", "watchdog (>=0.8.3,<0.11)", "flake8 (>=3.7.7,<4)", "isort (>=4.3.4,<5)", "dlint (>=0.11.0,<0.12)", "flake8-debugger (>=4.0.0,<4.1)", "flake8-mock (>=0.3,<0.4)", "flake8-mutable (>=1.2.0,<1.3)", "flake8-absolute-import (>=1.0,<2)", "flake8-multiline-containers (>=0.0.18,<0.1)", "flake8-print (>=4.0.0,<4.1)", "flake8-quotes (>=3.3.0,<4)", "flake8-fixme (>=1.1.1,<1.2)", "flake8-expression-complexity (>=0.0.9,<0.1)", "flake8-eradicate (>=1.1.0,<1.2)", "flake8-builtins (>=1.5.3,<1.6)", "flake8-variables-names (>=0.0.4,<0.1)", "pandas-vet (>=0.2.2,<0.3)", "flake8-comprehensions (>=3.6.1,<3.7)", "flake8-docstrings (>=1.5.0,<2)", "flake8-sfs (>=0.0.3,<0.1)", "flake8-pytest-style (>=1.5.0,<2)", "autoflake (>=1.1,<2)", "autopep8 (>=1.4.3,<1.6)", "twine (>=1.10.0,<4)", "wheel (>=0.30.0)", "coverage (>=4.5.1,<6)", "tox (>=2.9.1,<4)", "invoke", "pytest (>=3.4.2)", "pytest-rerunfailures (>=9.1.1,<10)", "pytest-cov (>=2.6.0)"]
+test = ["pytest (>=3.4.2)", "pytest-rerunfailures (>=9.1.1,<10)", "pytest-cov (>=2.6.0)"]
+
+[[package]]
+name = "cycler"
+version = "0.11.0"
+description = "Composable style cycles"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "deepecho"
+version = "0.3.0.post1"
+description = "Mixed-type multivariate time series modeling with generative adversarial networks."
+category = "main"
+optional = false
+python-versions = ">=3.6,<3.10"
+
+[package.dependencies]
+numpy = {version = ">=1.20.0,<2", markers = "python_version >= \"3.7\""}
+pandas = ">=1.1.3,<2"
+torch = ">=1.8.0,<2"
+tqdm = ">=4.15,<5"
+
+[package.extras]
+dev = ["autoflake (>=1.1,<2)", "autopep8 (>=1.4.3,<1.6)", "bumpversion (>=0.5.3,<0.6)", "coverage (>=4.5.1,<6)", "flake8-absolute-import (>=1.0,<2)", "flake8-docstrings (>=1.5.0,<2)", "flake8-sfs (>=0.0.3,<0.1)", "flake8 (>=3.7.7,<4)", "invoke", "isort (>=4.3.4,<5)", "jupyter (>=1.0.0,<2)", "pip (>=9.0.1)", "pylint (>=2.5.3,<3)", "pytest-cov (>=2.6.0)", "pytest-rerunfailures (>=9.0.0,<10)", "pytest (>=3.4.2)", "rundoc (>=0.4.3,<0.5)", "setuptools (<49.2)", "tox (>=2.9.1,<4)", "twine (>=1.10.0,<4)", "watchdog (>=0.8.3,<0.11)", "wheel (>=0.30.0)"]
+test = ["jupyter (>=1.0.0,<2)", "pytest-cov (>=2.6.0)", "pytest-rerunfailures (>=9.0.0,<10)", "pytest (>=3.4.2)", "rundoc (>=0.4.3,<0.5)"]
+
+[[package]]
+name = "dp-cgans"
+version = "0.0.4"
+description = "A library to generate synthetic tabular data using Conditional Generative Adversary Networks (GANs) combined with Differential Privacy techniques."
+category = "main"
+optional = false
+python-versions = ">=3.8,<3.10"
+develop = false
+
+[package.dependencies]
+copulas = "0.6.1"
+ctgan = "0.5.1"
+faker = "9.9.1"
+graphviz = "*"
+numpy = "1.22.4"
+pandas = "1.5.3"
+pyreadstat = "*"
+rdt = "0.6.4"
+scikit-learn = "*"
+scipy = "1.7.3"
+sdv = "0.14.0"
+torch = "1.13.1"
+typer = "*"
+
+[package.source]
+type = "git"
+url = "https://github.com/sunchang0124/dp_cgans.git/"
+reference = "0ed8b5c"
+resolved_reference = "0ed8b5c0f1307decb2d76ede76edfbe39fc195db"
+
+[[package]]
+name = "faker"
+version = "9.9.1"
+description = "Faker is a Python package that generates fake data for you."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+python-dateutil = ">=2.4"
+text-unidecode = "1.3"
+
+[[package]]
+name = "flake8"
+version = "3.9.2"
+description = "the modular source code checker: pep8 pyflakes and co"
+category = "dev"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
+
+[package.dependencies]
+mccabe = ">=0.6.0,<0.7.0"
+pycodestyle = ">=2.7.0,<2.8.0"
+pyflakes = ">=2.3.0,<2.4.0"
+
+[[package]]
+name = "fonttools"
+version = "4.42.0"
+description = "Tools to manipulate font files"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.extras]
+all = ["fs (>=2.2.0,<3)", "lxml (>=4.0,<5)", "zopfli (>=0.1.4)", "lz4 (>=1.7.4.2)", "matplotlib", "sympy", "skia-pathops (>=0.5.0)", "uharfbuzz (>=0.23.0)", "brotlicffi (>=0.8.0)", "scipy", "brotli (>=1.0.1)", "munkres", "unicodedata2 (>=15.0.0)", "xattr"]
+graphite = ["lz4 (>=1.7.4.2)"]
+interpolatable = ["scipy", "munkres"]
+lxml = ["lxml (>=4.0,<5)"]
+pathops = ["skia-pathops (>=0.5.0)"]
+plot = ["matplotlib"]
+repacker = ["uharfbuzz (>=0.23.0)"]
+symfont = ["sympy"]
+type1 = ["xattr"]
+ufo = ["fs (>=2.2.0,<3)"]
+unicode = ["unicodedata2 (>=15.0.0)"]
+woff = ["zopfli (>=0.1.4)", "brotlicffi (>=0.8.0)", "brotli (>=1.0.1)"]
+
+[[package]]
+name = "graphviz"
+version = "0.20.1"
+description = "Simple Python interface for Graphviz"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+dev = ["tox (>=3)", "flake8", "pep8-naming", "wheel", "twine"]
+docs = ["sphinx (>=5)", "sphinx-autodoc-typehints", "sphinx-rtd-theme"]
+test = ["pytest (>=7)", "pytest-mock (>=3)", "mock (>=4)", "pytest-cov", "coverage"]
+
+[[package]]
+name = "idna"
+version = "3.4"
+description = "Internationalized Domain Names in Applications (IDNA)"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[[package]]
+name = "importlib-metadata"
+version = "6.8.0"
+description = "Read metadata from Python packages"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+zipp = ">=0.5"
+
+[package.extras]
+docs = ["sphinx (>=3.5)", "jaraco.packaging (>=9)", "rst.linker (>=1.9)", "furo", "sphinx-lint", "jaraco.tidelift (>=1.4)"]
+perf = ["ipython"]
+testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-ruff", "packaging", "pyfakefs", "flufl.flake8", "pytest-perf (>=0.9.2)", "pytest-black (>=0.3.7)", "pytest-mypy (>=0.9.1)", "importlib-resources (>=1.3)"]
+
+[[package]]
+name = "importlib-resources"
+version = "6.0.1"
+description = "Read resources from Python packages"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+zipp = {version = ">=3.1.0", markers = "python_version < \"3.10\""}
+
+[package.extras]
+docs = ["sphinx (>=3.5)", "jaraco.packaging (>=9.3)", "rst.linker (>=1.9)", "furo", "sphinx-lint", "jaraco.tidelift (>=1.4)"]
+testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-ruff", "pytest-black (>=0.3.7)", "pytest-mypy (>=0.9.1)"]
+
+[[package]]
+name = "isort"
+version = "4.3.21"
+description = "A Python utility / library to sort Python imports."
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[package.extras]
+pipfile = ["pipreqs", "requirementslib"]
+pyproject = ["toml"]
+requirements = ["pipreqs", "pip-api"]
+xdg_home = ["appdirs (>=1.4.0)"]
+
+[[package]]
+name = "joblib"
+version = "1.3.2"
+description = "Lightweight pipelining with Python functions"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "kiwisolver"
+version = "1.4.4"
+description = "A fast implementation of the Cassowary constraint solver"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "llvmlite"
+version = "0.40.1"
+description = "lightweight wrapper around basic LLVM functionality"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
+name = "matplotlib"
+version = "3.7.1"
+description = "Python plotting package"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+contourpy = ">=1.0.1"
+cycler = ">=0.10"
+fonttools = ">=4.22.0"
+importlib-resources = {version = ">=3.2.0", markers = "python_version < \"3.10\""}
+kiwisolver = ">=1.0.1"
+numpy = ">=1.20"
+packaging = ">=20.0"
+pillow = ">=6.2.0"
+pyparsing = ">=2.3.1"
+python-dateutil = ">=2.7"
+setuptools_scm = ">=7"
+
+[[package]]
+name = "mccabe"
+version = "0.6.1"
+description = "McCabe checker, plugin for flake8"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "more-itertools"
+version = "10.1.0"
+description = "More routines for operating on iterables, beyond itertools"
+category = "dev"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
+name = "mypy"
+version = "0.770"
+description = "Optional static typing for Python"
+category = "dev"
+optional = false
+python-versions = ">=3.5"
+
+[package.dependencies]
+mypy-extensions = ">=0.4.3,<0.5.0"
+typed-ast = ">=1.4.0,<1.5.0"
+typing-extensions = ">=3.7.4"
+
+[package.extras]
+dmypy = ["psutil (>=4.0)"]
+
+[[package]]
+name = "mypy-extensions"
+version = "0.4.4"
+description = "Experimental type system extensions for programs checked with the mypy typechecker."
+category = "dev"
+optional = false
+python-versions = ">=2.7"
+
+[[package]]
+name = "numba"
+version = "0.57.1"
+description = "compiling Python code using LLVM"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+importlib-metadata = {version = "*", markers = "python_version < \"3.9\""}
+llvmlite = ">=0.40.0dev0,<0.41"
+numpy = ">=1.21,<1.25"
+
+[[package]]
+name = "numpy"
+version = "1.22.4"
+description = "NumPy is the fundamental package for array computing with Python."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
+name = "nvidia-cublas-cu11"
+version = "11.10.3.66"
+description = "CUBLAS native runtime libraries"
+category = "main"
+optional = false
+python-versions = ">=3"
+
+[[package]]
+name = "nvidia-cuda-nvrtc-cu11"
+version = "11.7.99"
+description = "NVRTC native runtime libraries"
+category = "main"
+optional = false
+python-versions = ">=3"
+
+[[package]]
+name = "nvidia-cuda-runtime-cu11"
+version = "11.7.99"
+description = "CUDA Runtime native Libraries"
+category = "main"
+optional = false
+python-versions = ">=3"
+
+[[package]]
+name = "nvidia-cudnn-cu11"
+version = "8.5.0.96"
+description = "cuDNN runtime libraries"
+category = "main"
+optional = false
+python-versions = ">=3"
+
+[[package]]
+name = "packaging"
+version = "21.3"
+description = "Core utilities for Python packages"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyparsing = ">=2.0.2,<3.0.5 || >3.0.5"
+
+[[package]]
+name = "pandas"
+version = "1.5.3"
+description = "Powerful data structures for data analysis, time series, and statistics"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+numpy = {version = ">=1.20.3", markers = "python_version < \"3.10\""}
+python-dateutil = ">=2.8.1"
+pytz = ">=2020.1"
+
+[package.extras]
+test = ["hypothesis (>=5.5.3)", "pytest (>=6.0)", "pytest-xdist (>=1.31)"]
+
+[[package]]
+name = "pathspec"
+version = "0.11.2"
+description = "Utility library for gitignore style pattern matching of file paths."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "pillow"
+version = "10.0.0"
+description = "Python Imaging Library (Fork)"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.extras]
+docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-inline-tabs", "sphinx-removed-in", "sphinxext-opengraph"]
+tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
+
+[[package]]
+name = "pluggy"
+version = "0.13.1"
+description = "plugin and hook calling mechanisms for python"
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[package.extras]
+dev = ["pre-commit", "tox"]
+
+[[package]]
+name = "psutil"
+version = "5.9.5"
+description = "Cross-platform lib for process and system monitoring in Python."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[package.extras]
+test = ["ipaddress", "mock", "enum34", "pywin32", "wmi"]
+
+[[package]]
+name = "py"
+version = "1.11.0"
+description = "library with cross-python path, ini-parsing, io, code, log facilities"
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "pycodestyle"
+version = "2.7.0"
+description = "Python style guide checker"
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
+name = "pyflakes"
+version = "2.3.1"
+description = "passive checker of Python programs"
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
+name = "pyparsing"
+version = "3.1.1"
+description = "pyparsing module - Classes and methods to define and execute parsing grammars"
+category = "main"
+optional = false
+python-versions = ">=3.6.8"
+
+[package.extras]
+diagrams = ["railroad-diagrams", "jinja2"]
+
+[[package]]
+name = "pyreadstat"
+version = "1.2.2"
+description = "Reads and Writes SAS, SPSS and Stata files into/from pandas data frames."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+pandas = ">=1.2.0"
+
+[[package]]
+name = "pytest"
+version = "5.4.3"
+description = "pytest: simple powerful testing with Python"
+category = "dev"
+optional = false
+python-versions = ">=3.5"
+
+[package.dependencies]
+atomicwrites = {version = ">=1.0", markers = "sys_platform == \"win32\""}
+attrs = ">=17.4.0"
+colorama = {version = "*", markers = "sys_platform == \"win32\""}
+more-itertools = ">=4.0.0"
+packaging = "*"
+pluggy = ">=0.12,<1.0"
+py = ">=1.5.0"
+wcwidth = "*"
+
+[package.extras]
+checkqa-mypy = ["mypy (==v0.761)"]
+testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xmlschema"]
+
+[[package]]
+name = "pytest-cov"
+version = "2.12.1"
+description = "Pytest plugin for measuring coverage."
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[package.dependencies]
+coverage = ">=5.2.1"
+pytest = ">=4.6"
+toml = "*"
+
+[package.extras]
+testing = ["fields", "hunter", "process-tests", "six", "pytest-xdist", "virtualenv"]
+
+[[package]]
+name = "python-dateutil"
+version = "2.8.2"
+description = "Extensions to the standard Python datetime module"
+category = "main"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+
+[package.dependencies]
+six = ">=1.5"
+
+[[package]]
+name = "pyts"
+version = "0.12.0"
+description = "A python package for time series classification"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+joblib = ">=0.12"
+numba = ">=0.48.0"
+numpy = ">=1.17.5"
+scikit-learn = ">=0.22.1"
+scipy = ">=1.3.0"
+
+[package.extras]
+docs = ["docutils (==0.14)", "sphinx (==1.8.5)", "sphinx-gallery", "numpydoc", "matplotlib"]
+tests = ["pytest", "pytest-cov"]
+
+[[package]]
+name = "pytz"
+version = "2023.3"
+description = "World timezone definitions, modern and historical"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "pyyaml"
+version = "5.4.1"
+description = "YAML parser and emitter for Python"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+
+[[package]]
+name = "rdt"
+version = "0.6.4"
+description = "Reversible Data Transforms"
+category = "main"
+optional = false
+python-versions = ">=3.6,<3.10"
+
+[package.dependencies]
+numpy = {version = ">=1.20.0,<2", markers = "python_version >= \"3.7\""}
+pandas = ">=1.1.3,<2"
+psutil = ">=5.7,<6"
+pyyaml = ">=5.4.1,<6"
+scikit-learn = ">=0.24,<2"
+scipy = ">=1.5.4,<1.8"
+
+[package.extras]
+copulas = ["copulas (>=0.6.0,<0.7)"]
+dev = ["bumpversion (>=0.5.3,<0.6)", "pip (>=9.0.1)", "watchdog (>=0.8.3,<0.11)", "pycodestyle (>=2.7.0,<2.8.0)", "pyflakes (>=2.3.0,<2.4.0)", "flake8 (>=3.7.7,<4)", "flake8-absolute-import (>=1.0,<2)", "flake8-builtins (>=1.5.3,<1.6)", "flake8-comprehensions (>=3.6.1,<3.7)", "flake8-debugger (>=4.0.0,<4.1)", "flake8-docstrings (>=1.5.0,<2)", "flake8-mock (>=0.3,<0.4)", "flake8-variables-names (>=0.0.4,<0.1)", "dlint (>=0.11.0,<0.12)", "flake8-fixme (>=1.1.1,<1.2)", "flake8-eradicate (>=1.1.0,<1.2)", "flake8-mutable (>=1.2.0,<1.3)", "flake8-print (>=4.0.0,<4.1)", "isort (>=4.3.4,<5)", "pylint (>=2.5.3,<3)", "pandas-vet (>=0.2.2,<0.3)", "flake8-multiline-containers (>=0.0.18,<0.1)", "flake8-pytest-style (>=1.5.0,<2)", "flake8-quotes (>=3.3.0,<4)", "flake8-expression-complexity (>=0.0.9,<0.1)", "pep8-naming (>=0.12.1,<0.13)", "pydocstyle (>=6.1.1,<6.2)", "flake8-sfs (>=0.0.3,<0.1)", "autoflake (>=1.1,<2)", "autopep8 (>=1.4.3,<1.6)", "twine (>=1.10.0,<4)", "wheel (>=0.30.0)", "coverage (>=4.5.1,<6)", "tox (>=2.9.1,<4)", "tabulate (>=0.8.9,<1)", "invoke", "pytest (>=3.4.2)", "pytest-cov (>=2.6.0)", "jupyter (>=1.0.0,<2)", "rundoc (>=0.4.3,<0.5)", "pytest-subtests (>=0.5,<1.0)", "copulas (>=0.6.0,<0.7)"]
+test = ["pytest (>=3.4.2)", "pytest-cov (>=2.6.0)", "jupyter (>=1.0.0,<2)", "rundoc (>=0.4.3,<0.5)", "pytest-subtests (>=0.5,<1.0)", "copulas (>=0.6.0,<0.7)"]
+
+[[package]]
+name = "regex"
+version = "2023.8.8"
+description = "Alternative regular expression module, to replace re."
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "requests"
+version = "2.31.0"
+description = "Python HTTP for Humans."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+certifi = ">=2017.4.17"
+charset-normalizer = ">=2,<4"
+idna = ">=2.5,<4"
+urllib3 = ">=1.21.1,<3"
+
+[package.extras]
+socks = ["PySocks (>=1.5.6,!=1.5.7)"]
+use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
+
+[[package]]
+name = "scikit-learn"
+version = "1.3.0"
+description = "A set of python modules for machine learning and data mining"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+joblib = ">=1.1.1"
+numpy = ">=1.17.3"
+scipy = ">=1.5.0"
+threadpoolctl = ">=2.0.0"
+
+[package.extras]
+benchmark = ["matplotlib (>=3.1.3)", "pandas (>=1.0.5)", "memory-profiler (>=0.57.0)"]
+docs = ["matplotlib (>=3.1.3)", "scikit-image (>=0.16.2)", "pandas (>=1.0.5)", "seaborn (>=0.9.0)", "memory-profiler (>=0.57.0)", "sphinx (>=6.0.0)", "sphinx-copybutton (>=0.5.2)", "sphinx-gallery (>=0.10.1)", "numpydoc (>=1.2.0)", "Pillow (>=7.1.2)", "pooch (>=1.6.0)", "sphinx-prompt (>=1.3.0)", "sphinxext-opengraph (>=0.4.2)", "plotly (>=5.14.0)"]
+examples = ["matplotlib (>=3.1.3)", "scikit-image (>=0.16.2)", "pandas (>=1.0.5)", "seaborn (>=0.9.0)", "pooch (>=1.6.0)", "plotly (>=5.14.0)"]
+tests = ["matplotlib (>=3.1.3)", "scikit-image (>=0.16.2)", "pandas (>=1.0.5)", "pytest (>=7.1.2)", "pytest-cov (>=2.9.0)", "ruff (>=0.0.272)", "black (>=23.3.0)", "mypy (>=1.3)", "pyamg (>=4.0.0)", "numpydoc (>=1.2.0)", "pooch (>=1.6.0)"]
+
+[[package]]
+name = "scipy"
+version = "1.7.3"
+description = "SciPy: Scientific Library for Python"
+category = "main"
+optional = false
+python-versions = ">=3.7,<3.11"
+
+[package.dependencies]
+numpy = ">=1.16.5,<1.23.0"
+
+[[package]]
+name = "sdmetrics"
+version = "0.4.1"
+description = "Metrics for Synthetic Data Generation Projects"
+category = "main"
+optional = false
+python-versions = ">=3.6,<3.10"
+
+[package.dependencies]
+copulas = ">=0.6.0,<0.7"
+numpy = {version = ">=1.20.0,<2", markers = "python_version >= \"3.7\""}
+pandas = ">=1.1.3,<2"
+pyts = ">=0.12.0,<0.13.0"
+rdt = ">=0.6.1,<0.7"
+scikit-learn = ">=0.24,<2"
+scipy = ">=1.5.4,<2"
+torch = ">=1.8.0,<2"
+
+[package.extras]
+dev = ["bumpversion (>=0.5.3,<0.6)", "pip (>=9.0.1)", "watchdog (>=0.8.3,<0.11)", "flake8 (>=3.7.7,<4)", "flake8-absolute-import (>=1.0,<2)", "isort (>=4.3.4,<5)", "flake8-variables-names (>=0.0.4,<0.1)", "pydocstyle (>=6.1.1,<6.2)", "flake8-sfs (>=0.0.3,<0.1)", "flake8-docstrings (>=1.5.0,<2)", "dlint (>=0.11.0,<0.12)", "pandas-vet (>=0.2.2,<0.3)", "pep8-naming (>=0.12.1,<0.13)", "flake8-pytest-style (>=1.5.0,<2)", "flake8-builtins (>=1.5.3,<1.6)", "flake8-comprehensions (>=3.6.1,<3.7)", "flake8-debugger (>=4.0.0,<4.1)", "flake8-mock (>=0.3,<0.4)", "flake8-fixme (>=1.1.1,<1.2)", "flake8-eradicate (>=1.1.0,<1.2)", "flake8-mutable (>=1.2.0,<1.3)", "flake8-print (>=4.0.0,<4.1)", "flake8-expression-complexity (>=0.0.9,<0.1)", "flake8-multiline-containers (>=0.0.18,<0.1)", "flake8-quotes (>=3.3.0,<4)", "autoflake (>=1.1,<2)", "autopep8 (>=1.4.3,<1.6)", "packaging (>=20,<21)", "twine (>=1.10.0,<4)", "wheel (>=0.30.0)", "coverage (>=4.5.1,<6)", "tox (>=2.9.1,<4)", "pytest (>=3.4.2)", "pytest-cov (>=2.6.0)", "pytest-rerunfailures (>=9.1.1,<10)", "jupyter (>=1.0.0,<2)", "rundoc (>=0.4.3,<0.5)", "invoke", "pomegranate (>=0.13.4,<0.14.2)", "pomegranate (>=0.14.1,<0.15)"]
+pomegranate = ["pomegranate (>=0.13.4,<0.14.2)", "pomegranate (>=0.14.1,<0.15)"]
+test = ["pytest (>=3.4.2)", "pytest-cov (>=2.6.0)", "pytest-rerunfailures (>=9.1.1,<10)", "jupyter (>=1.0.0,<2)", "rundoc (>=0.4.3,<0.5)", "invoke", "pomegranate (>=0.13.4,<0.14.2)", "pomegranate (>=0.14.1,<0.15)"]
+
+[[package]]
+name = "sdv"
+version = "0.14.0"
+description = "Synthetic Data Generation for tabular, relational and time series data."
+category = "main"
+optional = false
+python-versions = ">=3.6,<3.10"
+
+[package.dependencies]
+copulas = ">=0.6.1,<0.7"
+ctgan = ">=0.5.1,<0.6"
+deepecho = ">=0.3.0.post1,<0.4"
+Faker = ">=3.0.0,<10"
+graphviz = ">=0.13.2,<1"
+numpy = {version = ">=1.20.0,<2", markers = "python_version >= \"3.7\""}
+pandas = ">=1.1.3,<2"
+rdt = ">=0.6.2,<0.7"
+sdmetrics = ">=0.4.1,<0.5"
+tqdm = ">=4.15,<5"
+
+[package.extras]
+dev = ["bumpversion (>=0.5.3,<0.6)", "pip (>=9.0.1)", "watchdog (>=0.8.3,<0.9)", "docutils (>=0.12,<0.18)", "m2r2 (>=0.2.5,<0.3)", "nbsphinx (>=0.5.0,<0.7)", "Sphinx (>=3,<3.3)", "pydata-sphinx-theme (<0.5)", "Jinja2 (>=2,<3)", "flake8 (>=3.7.7,<4)", "flake8-absolute-import (>=1.0,<2)", "flake8-docstrings (>=1.5.0,<2)", "flake8-sfs (>=0.0.3,<0.1)", "isort (>=4.3.4,<5)", "autoflake (>=1.1,<2)", "autopep8 (>=1.4.3,<1.6)", "twine (>=1.10.0,<4)", "wheel (>=0.30.0)", "coverage (>=4.5.1,<6)", "tox (>=2.9.1,<4)", "invoke", "pytest (>=3.4.2)", "pytest-cov (>=2.6.0)", "pytest-rerunfailures (>10)", "jupyter (>=1.0.0,<2)", "rundoc (>=0.4.3,<0.5)"]
+pomegranate = ["pomegranate (>=0.13.4,<0.14.2)", "pomegranate (>=0.14.1,<0.15)"]
+test = ["pytest (>=3.4.2)", "pytest-cov (>=2.6.0)", "pytest-rerunfailures (>10)", "jupyter (>=1.0.0,<2)", "rundoc (>=0.4.3,<0.5)"]
+
+[[package]]
+name = "setuptools-scm"
+version = "7.1.0"
+description = "the blessed package to manage your versions by scm tags"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+packaging = ">=20.0"
+tomli = {version = ">=1.0.0", markers = "python_version < \"3.11\""}
+typing-extensions = "*"
+
+[package.extras]
+test = ["pytest (>=6.2)", "virtualenv (>20)"]
+toml = ["setuptools (>=42)"]
+
+[[package]]
+name = "six"
+version = "1.16.0"
+description = "Python 2 and 3 compatibility utilities"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
+
+[[package]]
+name = "text-unidecode"
+version = "1.3"
+description = "The most basic Text::Unidecode port"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "threadpoolctl"
+version = "3.2.0"
+description = "threadpoolctl"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
+name = "toml"
+version = "0.10.2"
+description = "Python Library for Tom's Obvious, Minimal Language"
+category = "dev"
+optional = false
+python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
+
+[[package]]
+name = "tomli"
+version = "2.0.1"
+description = "A lil' TOML parser"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "torch"
+version = "1.13.1"
+description = "Tensors and Dynamic neural networks in Python with strong GPU acceleration"
+category = "main"
+optional = false
+python-versions = ">=3.7.0"
+
+[package.dependencies]
+nvidia-cublas-cu11 = {version = "11.10.3.66", markers = "platform_system == \"Linux\""}
+nvidia-cuda-nvrtc-cu11 = {version = "11.7.99", markers = "platform_system == \"Linux\""}
+nvidia-cuda-runtime-cu11 = {version = "11.7.99", markers = "platform_system == \"Linux\""}
+nvidia-cudnn-cu11 = {version = "8.5.0.96", markers = "platform_system == \"Linux\""}
+typing-extensions = "*"
+
+[package.extras]
+opt-einsum = ["opt-einsum (>=3.3)"]
+
+[[package]]
+name = "torchvision"
+version = "0.14.1"
+description = "image and video datasets and models for torch deep learning"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+numpy = "*"
+pillow = ">=5.3.0,<8.3.0 || >=8.4.0"
+requests = "*"
+torch = "1.13.1"
+typing-extensions = "*"
+
+[package.extras]
+scipy = ["scipy"]
+
+[[package]]
+name = "tqdm"
+version = "4.66.1"
+description = "Fast, Extensible Progress Meter"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
+
+[package.extras]
+dev = ["pytest (>=6)", "pytest-cov", "pytest-timeout", "pytest-xdist"]
+notebook = ["ipywidgets (>=6)"]
+slack = ["slack-sdk"]
+telegram = ["requests"]
+
+[[package]]
+name = "typed-ast"
+version = "1.4.3"
+description = "a fork of Python 2 and 3 ast modules with type comment support"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "typer"
+version = "0.9.0"
+description = "Typer, build great CLIs. Easy to code. Based on Python type hints."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+click = ">=7.1.1,<9.0.0"
+typing-extensions = ">=3.7.4.3"
+
+[package.extras]
+all = ["colorama (>=0.4.3,<0.5.0)", "shellingham (>=1.3.0,<2.0.0)", "rich (>=10.11.0,<14.0.0)"]
+dev = ["autoflake (>=1.3.1,<2.0.0)", "flake8 (>=3.8.3,<4.0.0)", "pre-commit (>=2.17.0,<3.0.0)"]
+doc = ["mkdocs (>=1.1.2,<2.0.0)", "mkdocs-material (>=8.1.4,<9.0.0)", "mdx-include (>=1.4.1,<2.0.0)", "pillow (>=9.3.0,<10.0.0)", "cairosvg (>=2.5.2,<3.0.0)"]
+test = ["shellingham (>=1.3.0,<2.0.0)", "pytest (>=4.4.0,<8.0.0)", "pytest-cov (>=2.10.0,<5.0.0)", "coverage (>=6.2,<7.0)", "pytest-xdist (>=1.32.0,<4.0.0)", "pytest-sugar (>=0.9.4,<0.10.0)", "mypy (==0.910)", "black (>=22.3.0,<23.0.0)", "isort (>=5.0.6,<6.0.0)", "rich (>=10.11.0,<14.0.0)"]
+
+[[package]]
+name = "typing-extensions"
+version = "4.7.1"
+description = "Backported and Experimental Type Hints for Python 3.7+"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "urllib3"
+version = "2.0.4"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)"]
+secure = ["certifi", "cryptography (>=1.9)", "idna (>=2.0.0)", "pyopenssl (>=17.1.0)", "urllib3-secure-extra"]
+socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
+zstd = ["zstandard (>=0.18.0)"]
+
+[[package]]
+name = "wcwidth"
+version = "0.2.6"
+description = "Measures the displayed width of unicode strings in a terminal"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "zipp"
+version = "3.16.2"
+description = "Backport of pathlib-compatible object wrapper for zip files"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.extras]
+docs = ["sphinx (>=3.5)", "jaraco.packaging (>=9.3)", "rst.linker (>=1.9)", "furo", "sphinx-lint", "jaraco.tidelift (>=1.4)"]
+testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-ruff", "jaraco.itertools", "jaraco.functools", "more-itertools", "big-o", "pytest-ignore-flaky", "pytest-black (>=0.3.7)", "pytest-mypy (>=0.9.1)"]
+
+[metadata]
+lock-version = "1.1"
+python-versions = ">=3.8,<3.10"
+content-hash = "73b53a25ed08afd95fc108787433440d3cd77b07c17359d949564a0eab14dcff"
+
+[metadata.files]
+appdirs = []
+atomicwrites = []
+attrs = []
+autoflake = []
+black = []
+certifi = []
+charset-normalizer = []
+click = []
+colorama = []
+contourpy = []
+copulas = []
+coverage = []
+ctgan = []
+cycler = []
+deepecho = []
+dp-cgans = []
+faker = []
+flake8 = []
+fonttools = []
+graphviz = []
+idna = []
+importlib-metadata = []
+importlib-resources = []
+isort = []
+joblib = []
+kiwisolver = []
+llvmlite = []
+matplotlib = []
+mccabe = []
+more-itertools = []
+mypy = []
+mypy-extensions = []
+numba = []
+numpy = []
+nvidia-cublas-cu11 = []
+nvidia-cuda-nvrtc-cu11 = []
+nvidia-cuda-runtime-cu11 = []
+nvidia-cudnn-cu11 = []
+packaging = []
+pandas = []
+pathspec = []
+pillow = []
+pluggy = []
+psutil = []
+py = []
+pycodestyle = []
+pyflakes = []
+pyparsing = []
+pyreadstat = []
+pytest = []
+pytest-cov = []
+python-dateutil = []
+pyts = []
+pytz = []
+pyyaml = []
+rdt = []
+regex = []
+requests = []
+scikit-learn = []
+scipy = []
+sdmetrics = []
+sdv = []
+setuptools-scm = []
+six = []
+text-unidecode = []
+threadpoolctl = []
+toml = []
+tomli = []
+torch = []
+torchvision = []
+tqdm = []
+typed-ast = []
+typer = []
+typing-extensions = []
+urllib3 = []
+wcwidth = []
+zipp = []

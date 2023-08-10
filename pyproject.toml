@@ -1,13 +1,12 @@
 [tool.poetry]
-name = "dp-cgans"
-version = "0.0.4"
-description = "A library to generate synthetic tabular data using Conditional Generative Adversary Networks (GANs) combined with Differential Privacy techniques."
+name = "explore-dp-cgans"
+version = "0.0.1"
+description = "Exploring the workings of DP CGANS"
 # description = "This package is extended from SDV (https://github.com/sdv-dev/SDV), CTGAN (https://github.com/sdv-dev/CTGAN), and Differential Privacy in GANs (https://github.com/civisanalytics/dpwgan). The author modified the conditional matrix and cost functions to emphasize on the relations between variables. The main changes are in ctgan/synthesizers/ctgan.py ../data_sampler.py ../data_transformer.py"
-authors = ["Chang Sun <sunchang0124@gmail.com>", "Leopold Cudilla <leopoldcudilla@gmail.com>", "Vincent Emonet <vincent.emonet@gmail.com>"]
+authors = ["Chang Sun <sunchang0124@gmail.com>", "Flavio Hafner <f.hafner@esciencecenter.nl>"]
 readme = "README.md"
 license = "MIT"
-homepage = "https://github.com/sunchang0124/dp_cgans"
-repository = "https://github.com/sunchang0124/dp_cgans"
+repository = "https://github.com/private-synthetic-data-social-sciences/explore_dpcgans"
 keywords = [ "CGAN", "synthetic data", "DP", "Differential Privacy", "GAN" ]
 include = [
     "LICENSE",
@@ -40,7 +39,8 @@ ctgan = "0.5.1"
 pyreadstat = "*"
 sdv = "0.14.0"
 typer = "*"
-
+dp-cgans = { git = "https://github.com/sunchang0124/dp_cgans.git/", rev = "0ed8b5c" }
+# the pip version fails b/c of sklearn dependency
 
 [tool.poetry.dev-dependencies]
 mypy = "^0.770"
@@ -50,10 +50,6 @@ autoflake = "^1.3.1"
 flake8 = "^3.7.9"
 pytest = "^5.4.1"
 pytest-cov = "^2.8.1"
-
-
-[tool.poetry.urls]
-"Bug Tracker" = "https://github.com/sunchang0124/dp_cgans/issues"
 
 
 [build-system]
