@@ -44,3 +44,67 @@ python sample_dpcgans.py # raises errors
 ### To do
 - also try: using as many packages as possible from pyproject directly from the module environment? how does poetry resolve such requirements?
 - figure out how to copy over the file/make files accessible on the node
+
+
+### Problem
+
+`poetry shell` gives the following output:
+```bash
+poetry shell 
+Spawning shell within /gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv
+. /gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/bin/activate
+flatpak: /sw/arch/Centos8/EB_production/2021/software/XZ/5.2.5-GCCcore-10.3.0/lib/liblzma.so.5: version `XZ_5.2' not found (required by /lib64/libarchive.so.13)
+[hafner@gcn13 explore_dpcgans]$ . /gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/bin/activate
+(.venv) [hafner@gcn13 explore_dpcgans]$ python sample_dpcgans.py
+/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/sklearn/base.py:347: InconsistentVersionWarning: Trying to unpickle estimator BayesianGaussianMixture from version 0.24.2 when using version 1.3.0. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+Traceback (most recent call last):
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/sample_dpcgans.py", line 16, in <module>
+    model.sample()
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/dp_cgans/base.py", line 442, in sample
+    return self._sample_batch(num_rows, max_retries, max_rows_multiplier)
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/dp_cgans/base.py", line 299, in _sample_batch
+    sampled, num_valid = self._sample_rows(
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/dp_cgans/base.py", line 228, in _sample_rows
+    sampled = self._sample(num_rows)
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/dp_cgans/dp_cgan_init.py", line 80, in _sample
+    return self._model.sample(num_rows)
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/dp_cgans/synthesizers/dp_cgan.py", line 664, in sample
+    return self._transformer.inverse_transform(data)
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/dp_cgans/data_transformer.py", line 198, in inverse_transform
+    recovered_column_data = self._inverse_transform_discrete(
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/dp_cgans/data_transformer.py", line 178, in _inverse_transform_discrete
+    return ohe.reverse_transform(data)[column_transform_info.column_name]
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/rdt/transformers/base.py", line 279, in reverse_transform
+    if any(column not in data.columns for column in self.output_columns):
+TypeError: 'NoneType' object is not iterable
+```
+
+`python sample_dpcgans.py` gives the following output:
+
+```bash
+/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/sklearn/base.py:347: InconsistentVersionWarning: Trying to unpickle estimator BayesianGaussianMixture from version 0.24.2 when using version 1.3.0. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+Traceback (most recent call last):
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/sample_dpcgans.py", line 16, in <module>
+    model.sample()
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/dp_cgans/base.py", line 442, in sample
+    return self._sample_batch(num_rows, max_retries, max_rows_multiplier)
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/dp_cgans/base.py", line 299, in _sample_batch
+    sampled, num_valid = self._sample_rows(
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/dp_cgans/base.py", line 228, in _sample_rows
+    sampled = self._sample(num_rows)
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/dp_cgans/dp_cgan_init.py", line 80, in _sample
+    return self._model.sample(num_rows)
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/dp_cgans/synthesizers/dp_cgan.py", line 664, in sample
+    return self._transformer.inverse_transform(data)
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/dp_cgans/data_transformer.py", line 198, in inverse_transform
+    recovered_column_data = self._inverse_transform_discrete(
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/dp_cgans/data_transformer.py", line 178, in _inverse_transform_discrete
+    return ohe.reverse_transform(data)[column_transform_info.column_name]
+  File "/gpfs/home2/hafner/projects/gans/explore_dpcgans/.venv/lib/python3.9/site-packages/rdt/transformers/base.py", line 279, in reverse_transform
+    if any(column not in data.columns for column in self.output_columns):
+TypeError: 'NoneType' object is not iterable
+```
