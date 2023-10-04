@@ -89,3 +89,23 @@ Traceback (most recent call last):
     if any(column not in data.columns for column in self.output_columns):
 TypeError: 'NoneType' object is not iterable
 ```
+
+
+## Profiling the performance of DP CGAN
+
+Start with
+```bash
+poetry shell
+```
+
+Then
+```bash
+python -m cProfile -o profiling_X.txt train_sample_dpcgans.py 
+```
+where `profiling_X.txt` refers to a training run with specification `X` -- at the moment, this is just `10kobs`, ie, 10_000 observations. (see the script for details).
+
+Then, run
+
+```python
+python -i inspect_profiling_results.py
+```
