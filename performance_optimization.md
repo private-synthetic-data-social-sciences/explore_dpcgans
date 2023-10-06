@@ -57,6 +57,7 @@ There is a nested for loop in `data_transformer.py` -- this matters for primaril
         - But this seems more painful to implement.
         - [`pycave`](https://pycave.borchero.com/index.html) has Gaussian Mixtures, but not Bayesian Gaussian Mixture. I'm not sure how active this package is.
         - Google says there are some new GPU implementations of Bayesian Gaussian Mixture Models, for instance [this paper](https://www.jstage.jst.go.jp/article/transinf/E105.D/3/E105.D_2021EDP7121/_pdf)
+- But the BGMM routine already utilizes all CPU cores, so I don't think there is much to gain from parallelizing this 
 
 ### Improvement: streamline transformation
 - Is there room for optimizations within a single call to `_fit_continuous` or `_fit_discrete`. For this, I need to profile one call to these functions.
