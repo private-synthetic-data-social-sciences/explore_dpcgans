@@ -1,6 +1,8 @@
 # Exploring DP-CGANS
 
-The purpose of this repo is to see how to use the generator in DP_CGANS and adapt it for usage with `TAPAS`.
+The purpose of this repo is 
+- to see how to use the generator in DP_CGANS and adapt it for usage with `TAPAS`.
+- to explore the performance of the DP_GANS package and find ways to speed it up.
 
 ### Setup
 
@@ -69,7 +71,10 @@ where `profiling_X.txt` refers to a training run with specification `X` -- at th
 The output is stored in profiling_output. The files refer to the following specifications:
 - nobs_10000.txt: train on 10k obs, sample (after training) on local laptop.
 - nobs_10000_snellius.txt: train on 10k obs, sample (after training) on snellius. 
-- nobs_10000_snellius_nosampling.txt: train on 10k obs, no sampling, on snellius. This is the most relevant run.
+- nobs_10000_snellius_nosampling.txt: train on 10k obs, no sampling, on snellius. 
+- nobs_20000_snellius_nosample_batchsize_2000.txt: train on 20k obs, no sampling, on snellius, with batch size 2000
+    - tried the same as above with 30k obs, but cannot run it in a 15 minutes slot 
+
 
 Then, run
 
