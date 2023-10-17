@@ -9,7 +9,7 @@ np.random.seed(1)
 
 tabular_data=pd.read_csv("../datasets/Adult/Real/real_adult_data.csv")
 
-tabular_data = tabular_data.sample(n=10000)
+tabular_data = tabular_data.sample(n=10_000)
 
 # We adjusted the original CTGAN model from SDV. Instead of looking at the distribution of individual variable, we extended to two variables and keep their corrll
 model = DP_CGAN(
