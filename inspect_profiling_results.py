@@ -4,7 +4,7 @@
 import pstats
 from pstats import SortKey
 
-profiling_output = "profiling_10kobs.txt"
+profiling_output = "profiling_output/profiling_10kobs.txt"
 
 p = pstats.Stats(profiling_output)
 p.strip_dirs().sort_stats(-1).print_stats()

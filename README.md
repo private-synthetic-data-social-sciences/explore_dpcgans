@@ -61,12 +61,23 @@ poetry shell
 
 Then
 ```bash
-python -m cProfile -o profiling_X.txt train_sample_dpcgans.py 
+python -m cProfile -o profiling_output/nobs_XXXX_other_specs.txt train_sample_dpcgans.py 
 ```
+
 where `profiling_X.txt` refers to a training run with specification `X` -- at the moment, this is just `10kobs`, ie, 10_000 observations. (see the script for details).
+
+The output is stored in profiling_output. The files refer to the following specifications:
+- nobs_10000.txt: train on 10k obs, sample (after training) on local laptop.
+- nobs_10000_snellius.txt: train on 10k obs, sample (after training) on snellius. 
+- nobs_10000_snellius_nosampling.txt: train on 10k obs, no sampling, on snellius. This is the most relevant run.
 
 Then, run
 
 ```python
 python -i inspect_profiling_results.py
+```
+
+or 
+```bash
+snakeviz profiling_results/filename.txt
 ```
