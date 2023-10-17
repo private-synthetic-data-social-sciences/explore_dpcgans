@@ -2,19 +2,21 @@
 
 from dp_cgans import DP_CGAN
 import pandas as pd
-
+import torch 
 import numpy as np 
 
 np.random.seed(1)
 
+assert torch.cuda.is_available(), "cuda not available"
+
 tabular_data=pd.read_csv("../datasets/Adult/Real/real_adult_data.csv")
 
-tabular_data = tabular_data.sample(n=10_000)
+tabular_data = tabular_data.sample(n=20_000)
 
 # We adjusted the original CTGAN model from SDV. Instead of looking at the distribution of individual variable, we extended to two variables and keep their corrll
 model = DP_CGAN(
    epochs=100, # number of training epochs
-   batch_size=200, # the size of each batch
+   batch_size=2000, # the size of each batch
    log_frequency=True,
    verbose=True,
    generator_dim=(128, 128, 128),
