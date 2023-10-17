@@ -4,8 +4,7 @@ import pickle
 
 filename = "/home/fhafner/gans/datasets/Adult/DPCGANS/dpcgans_train_2000.pkl"
 filename = "/gpfs/home2/hafner/projects/gans/datasets/Adult/DPCGANS/dpcgans_train_2000.pkl"
-filename = "/gpfs/home2/hafner/projects/gans/datasets/Census/DPCGANS/dpcgans_train_2000.pkl"
-
+# filename = "/gpfs/home2/hafner/projects/gans/datasets/Census/DPCGANS/dpcgans_train_2000.pkl"
 
 # load the model
 with open(filename, "rb") as f:

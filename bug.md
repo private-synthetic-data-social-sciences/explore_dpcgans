@@ -1,7 +1,7 @@
 
 Trying to understand the bug.
 
-1. in the `rdt.BaseTransformer`, the output columns are not defined 
+1. in the `rdt.transformers.categorical.OneHotEncodingTransformer`, (though method is defined in `.base`) the output columns are not defined:
 ```bash
 (Pdb) self.get_output_columns()
 ['None.value0', 'None.value1', 'None.value2', 'None.value3', 'None.value4', 'None.value5', 'None.value6']

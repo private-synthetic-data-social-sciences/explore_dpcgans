@@ -17,6 +17,9 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+# packages = [
+#     { include = "rdt", from = "lib" }, # `/gpfs/home2/hafner/projects/gans/explore_dpcgans/lib/rdt does not contain any element` -- points to wrong location
+# ]
 
 
 [tool.poetry.scripts]
@@ -31,6 +34,7 @@ pandas = "1.5.3"
 torch = "1.13.1"
 scipy = "1.7.3"
 rdt = "0.6.4"
+# rdt = { from = "lib", develop = true }
 scikit-learn = "0.24.2"
 graphviz = "*"
 faker = "9.9.1"
@@ -40,7 +44,6 @@ pyreadstat = "*"
 sdv = "0.14.0"
 typer = "*"
 dp-cgans = { git = "https://github.com/sunchang0124/dp_cgans.git/", rev = "0ed8b5c" }
-# the pip version fails b/c of sklearn dependency
 
 [tool.poetry.dev-dependencies]
 mypy = "^0.770"
@@ -50,7 +53,6 @@ autoflake = "^1.3.1"
 flake8 = "^3.7.9"
 pytest = "^5.4.1"
 pytest-cov = "^2.8.1"
-
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.25.2"
