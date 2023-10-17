@@ -33,6 +33,11 @@
     28615   13.151    0.000   45.261    0.002 _logsumexp.py:7(logsumexp)
 ```
 
+To make this more informative
+- run with GPU 
+- visualize with snakeviz
+- profile line by line(?)
+
 
 #### Checking the source code 
 
