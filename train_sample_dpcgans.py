@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 import torch
 from dp_cgans import DP_CGAN
+import socket 
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--nobs", 
@@ -14,10 +15,14 @@ parser.add_argument("--nobs",
                     help="Number of observations to draw from the original data")
 
 args = parser.parse_args()
-
 np.random.seed(1)
 
-assert torch.cuda.is_available(), "cuda not available"
+hostnames_without_gpu = ["flavio-XPS-13-9310"]
+hostname = socket.gethostname()
+
+
+if hostname not in hostnames_without_gpu:
+   assert torch.cuda.is_available(), "cuda not available"
 
 tabular_data=pd.read_csv("../datasets/Adult/Real/real_adult_data.csv")
 
