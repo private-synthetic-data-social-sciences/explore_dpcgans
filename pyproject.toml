@@ -51,7 +51,7 @@ black = "^19.10b0"
 isort = "^4.3.21"
 autoflake = "^1.3.1"
 flake8 = "^3.7.9"
-pytest = "^5.4.1"
+pytest = ">=7.2.0" # https://github.com/private-synthetic-data-social-sciences/explore_dpcgans/security/dependabot/1
 pytest-cov = "^2.8.1"
 snakeviz = "^2.2.0"
 
