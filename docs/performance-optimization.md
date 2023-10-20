@@ -79,6 +79,7 @@ Not sure it's a big issue here; would need to update the scipy dependency in DP-
 - Other questions
     - [Why is the number of components hard-coded?] It seems more flexible to set the number of components higher, and let the model decide if they are not needed? (see documentation)
         - the running time seems to increase quickly with the number of components
+        - the time complexity also seems to depend multiplicatively on the number of components and on the size of the input (see notebook).
         - in RDT, they use a default of 10
 
 ## Conclusion
@@ -90,4 +91,7 @@ We should explore the options in the following order
 2. The implementation of the `data_transfomer`:
     1. Get rid of the `n_init=5` flag. 
     3. Re-use the BGMM model across runs of DP-CGAN -- but that only helps if the estimation does a lot of iterations. Need to find this out.
+    4. Explore options to use Stochastic VI (with or without GPU):
+        - https://jmlr.org/papers/volume14/hoffman13a/hoffman13a.pdf
+        - https://arxiv.org/abs/1601.00670
     4. use the GPU for estimating the BGMM. 
