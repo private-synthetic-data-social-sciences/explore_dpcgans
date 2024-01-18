@@ -1,0 +1,34 @@
+- ## Problem statement
+	- Data pre-processing is the bottleneck in DP-CGAN. To apply "mode-specific normalization" (a common technique when running GANS on tabular data), a Bayesian Gaussian Mixture model is estimated for all numerical columns in a dataset, to find up to 10 components with their means, standard deviation and probability weights. It is for instance used [here](https://github.com/sunchang0124/dp_cgans/blob/fe4b1222800b6ae58d4f2013ed4f38d2e4d6a225/src/dp_cgans/data_transformer.py#L36) in DP-CGANs.
+	- For this, it uses the BGMM implementation in [`sklearn` that builds on Bishop (2006)](https://scikit-learn.org/stable/modules/generated/sklearn.mixture.BayesianGaussianMixture.html)
+		- It uses a variational approximation that updates parameters after sweeping through the full dataset
+		- This algorithm scales with the size of the input data and so is not feasible for datasets with millions of records.
+	- In the context of the GANS project, the problem is
+		- (1) `sklearn` runs on the CPU, but the training of the GANS model after preprocessing is designed for the GPU
+		- (2) the currently implemented routine does not scale in the size of the input data; but the use case for the GANS project has 1.8 millions of records
+	- Other python libraries to generate synthetic data have the same problem, see for instance [this open issue in RDT](https://github.com/sdv-dev/RDT/issues/336) (the code from the GANS project was originally based on that code)
+	- It also appears that the `sklearn` implementation is slower than [matlab (post from 2018)](https://stackoverflow.com/questions/37300698/gaussian-mixture-model-fit-in-python-with-sklearn-is-too-slow-any-alternative)
+- ## Proposed Solution
+	- **Technical**
+		- Stochastic variational inference [(Hoffman et al, 2013)](https://jmlr.org/papers/volume14/hoffman13a/hoffman13a.pdf) promises to solve the scaling problem because it works with batches and updates the parameter values multiple times per sweep through dataset. This means the algorithm scales in the batch size.
+		- I have not found any off-the shelf solution for this in python that works out of the box and is easy to use, so I propose to write such a solution.
+			- Ideally, the new solution is a drop-in replacement for the `sklearn` function and is easy to use
+		- Implementation details: which frameworks to use
+			- "native" python with numpy arrays and coordinate ascent VI (CAVI)
+				- [Discussion on SO](https://stats.stackexchange.com/questions/246117/applying-stochastic-variational-inference-to-bayesian-mixture-of-gaussian)
+			- gradient-based with pytorch or jax
+				- > Gradient-based techniques, what I've seen go by the name "AutoDiff VI", is nice in theory but can require a lot of elbow grease before it actually outperforms a gibbs sampler. [Source](https://stats.stackexchange.com/questions/622272/which-is-the-best-way-to-implement-variational-inference)  
+			- use pyro: probabilistic programming
+				- [old code snippet from 2018](https://github.com/pyro-ppl/pyro/issues/746)
+				- [tensorflow BGMM and hamiltonian MCMC](https://www.tensorflow.org/probability/examples/Bayesian_Gaussian_Mixture_Model)
+        - There is a bunch of existing code snippets out there; for me it would be a matter of better understanding the algorithm and then tying it together into a re-usable tool.
+	- **Advantages**
+		- According to Hoffman et al (2013), it scales to millions of records. This fits precisely the use case for generating synthetic data from social security records.  
+		- It has a wide application potential where Gaussian mixture models are used.
+		- When using JAX, one could also run the code on the GPU. This is nice because the GANS models are also trained on the GPU.
+	- **Risks**
+		- Since there exists no solution until now, it appears as if (i) either the applicability is not wide/demand for it is low or (ii) it is hard to implement
+			- It may turn out to be hard to beat sklearn
+		- Even if it does work, it makes usage of DP-CGANS more complicated compared to sklearn because the use may need to choose more parameters, such as the batch size. A solution for this may be [Kucukelbir et al (2017)](https://www.jmlr.org/papers/volume18/16-107/16-107.pdf), but I need to see the details.    
+	- #### Alternative solutions
+		- Stan has something implemented along these lines, but this would be a large dependency.
