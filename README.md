@@ -15,6 +15,7 @@ The `docs/` directory has markdown documents:
 - `working-on-snellius.md`: how to run code on the supercomputer
 - `performance-optimizaton.md`: overview of possibilities to improve the speed performance of DP CGAN.
 - `profiling.md`: how to profile code and inspect the results.
+- `proposal_svi.md`: Details for a proposal for improving the Gaussian Mixture Model with Stochastic Variational Inference.
 
 ## Setup
 
